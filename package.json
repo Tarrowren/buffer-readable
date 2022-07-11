@@ -1,6 +1,6 @@
 {
   "name": "buffer-readable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "convert a string/Buffer/Uint8Array to a readable stream, support highWaterMark and adjustable push delay",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
