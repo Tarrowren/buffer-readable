@@ -31,7 +31,7 @@
     "url": "https://github.com/Tarrowren/buffer-readable/issues"
   },
   "homepage": "https://github.com/Tarrowren/buffer-readable#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/mocha": "^9.1.1",
     "@types/node": "^16.11.43",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
