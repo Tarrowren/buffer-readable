@@ -1,4 +1,4 @@
-import should from "should";
+import { expect } from "chai";
 import { BufferReadable } from ".";
 
 describe("BufferReadable", () => {
@@ -6,37 +6,37 @@ describe("BufferReadable", () => {
     it("string", () => {
       const data = "hello";
 
-      should.doesNotThrow(() => {
+      expect(() => {
         const stream = new BufferReadable(data);
         stream.destroy();
-      });
+      }).not.throw();
     });
 
     it("Buffer", () => {
       const data = Buffer.allocUnsafe(16);
 
-      should.doesNotThrow(() => {
+      expect(() => {
         const stream = new BufferReadable(data);
         stream.destroy();
-      });
+      }).not.throw();
     });
 
     it("Uint8Array", () => {
       const data = new Uint8Array(16);
 
-      should.doesNotThrow(() => {
+      expect(() => {
         const stream = new BufferReadable(data);
         stream.destroy();
-      });
+      }).not.throw();
     });
 
     it("error type", () => {
       const data: any = new Uint16Array(16);
 
-      should.throws(() => {
+      expect(() => {
         const stream = new BufferReadable(data);
         stream.destroy();
-      });
+      }).throw();
     });
   });
 
@@ -48,7 +48,7 @@ describe("BufferReadable", () => {
     });
 
     for await (const chunk of stream) {
-      should(chunk.length).lessThanOrEqual(highWaterMark);
+      expect(chunk.length).lte(highWaterMark);
     }
   });
 });
